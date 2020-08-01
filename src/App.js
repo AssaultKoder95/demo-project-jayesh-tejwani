@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Calendar from 'react-calendar';
-import { Grid, Header, Segment } from 'semantic-ui-react';
+import { Grid, Header, Segment, Dimmer, Loader } from 'semantic-ui-react';
 
 import EventList from './components/EventList';
 import RegisteredEvent from './components/RegisteredEvents';
@@ -30,23 +30,30 @@ function App() {
   const [date, setDate] = useState(new Date());
   const [currentDayEvents, setCurrentDayEvents] = useState([]);
   const [allEventsTimestamp, setAllEvents] = useState([]);
-  const [registeredEvents, setRegisteredEvents] = useState([]);
+  const [userRegisteredEvents, setUserRegisteredEvents] = useState([]);
+  const [loaderState, setLoaderState] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
+      setLoaderState(true);
       const { data: currentDayEvents } = await axios(`/events?date=${date.getTime()}`);
       const { data: allEventsTimestamp } = await axios(`/events/occurences`);
-      const { data: allRegisteredEvents } = await axios(`/users/1/registered-events`);
+      const { data: allUserRegisteredEvents } = await axios(`/users/1/registered-events`);
 
       setCurrentDayEvents(currentDayEvents);
       setAllEvents(allEventsTimestamp);
-      setRegisteredEvents(allRegisteredEvents);
+      setUserRegisteredEvents(allUserRegisteredEvents);
+      setLoaderState(false);
     }
     fetchData();
   }, [date]);
 
-  async function onClickDay(date) {
+  function onClickDay(date) {
     setDate(date);
+  }
+
+  function updateUserRegisteredEventList() {
+    setDate(new Date());
   }
 
   return (
@@ -65,13 +72,19 @@ function App() {
           </Segment>
         </Grid.Column>
         <Grid.Column className="event-list">
-          <EventList list={currentDayEvents} />
+          <Dimmer active={loaderState} inverted>
+            <Loader />
+          </Dimmer>
+          <EventList list={currentDayEvents} updateUserRegisteredEventList={updateUserRegisteredEventList} />
         </Grid.Column>
       </Grid>
       <Grid container>
         <Grid.Column>
           <Segment>
-            <RegisteredEvent events={registeredEvents} />
+            <Dimmer active={loaderState} inverted>
+              <Loader />
+            </Dimmer>
+            <RegisteredEvent events={userRegisteredEvents} />
           </Segment>
         </Grid.Column>
       </Grid>
