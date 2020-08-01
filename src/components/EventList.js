@@ -1,10 +1,11 @@
 import React from 'react';
-import { Header, Button, Container, Icon, Item } from 'semantic-ui-react';
+import { Header, Container, Item } from 'semantic-ui-react';
 import ShowLabelGroup from './GroupLabels';
+import FormModal from './FormModal';
 
-const EventList = ({ list }) => (
+const EventList = ({ list, updateUserRegisteredEventList }) => (
   <Container style={{ overflow: 'auto', maxHeight: '100%' }}>
-    <Header as="h3">Today's Events </Header>
+    <Header as="h3">Events</Header>
     <Item.Group divided>
       {!list.length ? (
         <Item>
@@ -27,10 +28,11 @@ const EventList = ({ list }) => (
             </Item.Meta>
             <Item.Description>{item.description}</Item.Description>
             <Item.Extra>
-              <Button primary size="tiny">
-                Register
-                <Icon name="chevron right" />
-              </Button>
+              <FormModal
+                eventId={item.id}
+                header={`${item.name} | ${item.timestring}`}
+                updateUserRegisteredEventList={updateUserRegisteredEventList}
+              />
             </Item.Extra>
           </Item.Content>
         </Item>
