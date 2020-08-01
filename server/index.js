@@ -18,6 +18,12 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, '/../', 'build')));
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../', 'build', 'index.html'));
+});
+
 app.get('/events', (req, res) => {
   try {
     const { date } = req.query;
@@ -101,6 +107,7 @@ app.get('/users/:userId/registered-events', (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log('listening...');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server is up on port ${PORT}!`);
 });
