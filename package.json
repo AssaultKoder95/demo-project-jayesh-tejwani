@@ -17,10 +17,11 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "node server/index.js",
     "build": "craco build",
     "test": "craco test",
-    "eject": "craco eject"
+	"eject": "craco eject",
+	"heroku-postbuild": "yarn && yarn run build"
   },
   "eslintConfig": {
     "extends": "react-app"
