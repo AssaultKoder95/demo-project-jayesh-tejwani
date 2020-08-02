@@ -21,7 +21,6 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-	"heroku-postbuild": "yarn && yarn run build",
 	"ss": "node server"
   },
   "eslintConfig": {
