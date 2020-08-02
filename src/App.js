@@ -35,7 +35,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      setLoaderState(true);
+	  setLoaderState(true);
       const { data: currentDayEvents } = await axios(`/events?date=${date.getTime()}`);
       const { data: allEventsTimestamp } = await axios(`/events/occurences`);
       const { data: allUserRegisteredEvents } = await axios(`/users/1/registered-events`);
@@ -63,7 +63,7 @@ function App() {
         <Grid.Column>
           <Segment>
             <Calendar
-              value={new Date()}
+              value={date}
               tileContent={({ view, date }) => eventOccurenceHandler({ view, date, allEventsTimestamp })}
               tileClassName="calendar-tile"
               style={{ height: '100%' }}
