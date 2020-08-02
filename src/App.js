@@ -35,7 +35,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-	  setLoaderState(true);
+      setLoaderState(true);
       const { data: currentDayEvents } = await axios(`/events?date=${date.getTime()}`);
       const { data: allEventsTimestamp } = await axios(`/events/occurences`);
       const { data: allUserRegisteredEvents } = await axios(`/users/1/registered-events`);
@@ -48,8 +48,8 @@ function App() {
     fetchData();
   }, [date]);
 
-  async function onClickDay(date) {
-    await setDate(date);
+  function onClickDay(date) {
+    setDate(date);
   }
 
   function updateUserRegisteredEventList() {
