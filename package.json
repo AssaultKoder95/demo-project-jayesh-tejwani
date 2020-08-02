@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "http-proxy-middleware": "^1.0.5",
     "lowdb": "^1.0.0",
     "morgan": "^1.10.0",
     "react": "^16.13.1",
@@ -21,7 +22,7 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-	"ss": "node server"
+    "ss": "node server"
   },
   "eslintConfig": {
     "extends": "react-app"
