@@ -107,7 +107,6 @@ app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '/../', 'build', 'index.html'));
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server is up on port ${PORT}!`);
+app.listen(process.env.PORT || 5000, function () {
+  console.log('Express server listening on port %d in %s mode', this.address().port, app.settings.env);
 });

@@ -18,7 +18,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
