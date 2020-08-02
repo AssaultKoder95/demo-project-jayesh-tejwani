@@ -48,8 +48,8 @@ function App() {
     fetchData();
   }, [date]);
 
-  function onClickDay(date) {
-    setDate(date);
+  async function onClickDay(date) {
+    await setDate(date);
   }
 
   function updateUserRegisteredEventList() {
