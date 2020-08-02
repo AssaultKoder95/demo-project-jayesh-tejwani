@@ -20,10 +20,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, '/../', 'build')));
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/../', 'build', 'index.html'));
-});
-
 app.get('/events', (req, res) => {
   try {
     const { date } = req.query;
@@ -105,6 +101,10 @@ app.get('/users/:userId/registered-events', (req, res) => {
     console.log(error);
     return res.sendStatus(500);
   }
+});
+
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/../', 'build', 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
