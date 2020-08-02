@@ -9,7 +9,6 @@ const adapter = new FileSync('db.json');
 const db = lowdb(adapter);
 const { events } = require('./constants');
 
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 db.defaults({ events }).write();
 
 const app = express();
@@ -17,6 +16,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
 app.use(express.static(path.join(__dirname, '/../', 'build')));
 
