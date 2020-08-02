@@ -2,7 +2,7 @@ module.exports = {
   events: [
     {
       name: 'Restorative yoga',
-      id: '5',
+      id: '1',
       labels: ['beginner'],
       description: 'Restorative yoga focuses on winding down after a long day and relaxing your mind.',
       timestamp: 1596375000000,
@@ -11,7 +11,7 @@ module.exports = {
     },
     {
       name: 'Yin yoga',
-      id: '3',
+      id: '2',
       labels: ['intermediate', 'just launched'],
       description:
         'Yin yoga is a slow-paced style of yoga with seated postures that are held for longer periods of time.',
@@ -21,7 +21,7 @@ module.exports = {
     },
     {
       name: 'Vinyasa yoga',
-      id: '1',
+      id: '3',
       labels: ['advance', 'exclusive', '50% discount'],
       description: 'Vinyasa means "to place in a special way" and, in this case, yoga postures.',
       timestamp: 1596457800000,
@@ -30,7 +30,7 @@ module.exports = {
     },
     {
       name: 'Restorative yoga',
-      id: '2',
+      id: '4',
       labels: ['beginner'],
       description: 'Restorative yoga focuses on winding down after a long day and relaxing your mind.',
       timestamp: 1596461400000,
@@ -39,7 +39,7 @@ module.exports = {
     },
     {
       name: 'Hatha yoga yoga',
-      id: '3',
+      id: '5',
       labels: ['beginner', 'just launched'],
       description: 'The Sanskrit term "hatha" is an umbrella term for all physical postures of yoga.',
       timestamp: 1596465000000,
@@ -58,7 +58,7 @@ module.exports = {
     },
     {
       name: 'Restorative yoga',
-      id: '5',
+      id: '7',
       labels: ['beginner'],
       description: 'Restorative yoga focuses on winding down after a long day and relaxing your mind.',
       timestamp: 1596979800000,
@@ -67,7 +67,7 @@ module.exports = {
     },
     {
       name: 'Yin yoga',
-      id: '3',
+      id: '8',
       labels: ['intermediate', 'just launched'],
       description:
         'Yin yoga is a slow-paced style of yoga with seated postures that are held for longer periods of time.',
@@ -77,7 +77,7 @@ module.exports = {
     },
     {
       name: 'Restorative yoga',
-      id: '5',
+      id: '9',
       labels: ['beginner'],
       description: 'Restorative yoga focuses on winding down after a long day and relaxing your mind.',
       timestamp: 1597325400000,
@@ -86,7 +86,7 @@ module.exports = {
     },
     {
       name: 'Yin yoga',
-      id: '3',
+      id: '10',
       labels: ['intermediate', 'just launched'],
       description:
         'Yin yoga is a slow-paced style of yoga with seated postures that are held for longer periods of time.',
@@ -96,7 +96,7 @@ module.exports = {
     },
     {
       name: 'Anusara yoga',
-      id: '7',
+      id: '11',
       labels: ['intermediate', 'exclusive'],
       description:
         'Anusara is a modern-day version of hatha yoga, most similar to vinyasa in that it focuses on alignment, but with more focus on the mind-body-heart connection.',
