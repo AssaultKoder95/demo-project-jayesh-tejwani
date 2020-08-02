@@ -9,7 +9,7 @@ const adapter = new FileSync('db.json');
 const db = lowdb(adapter);
 const { events } = require('./constants');
 
-morgan(':method :url :status :res[content-length] - :response-time ms');
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 db.defaults({ events }).write();
 
 const app = express();
