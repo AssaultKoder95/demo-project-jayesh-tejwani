@@ -26,7 +26,7 @@ app.get('/events', (req, res) => {
 
     if (!date) return res.send(events);
 
-	const events = db.get('events').value();
+	  const events = db.get('events').value();
     const filteredEvents = events.filter(({ timestamp }) => {
 	  const eventDate = new Date(timestamp).toDateString();
       return new Date(parseInt(date, 10) + + 19800000).toString().includes(eventDate);
